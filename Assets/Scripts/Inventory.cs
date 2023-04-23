@@ -20,11 +20,29 @@ public class Inventory
 
     public void AddItem(Item item)
     {
-        itemList.Add(item);
+        bool isInInventory = false;
+        foreach (Item inventoryItem in itemList)
+        {
+            if (inventoryItem.itemType == item.itemType)
+            {
+                isInInventory = true;
+                inventoryItem.amount += item.amount;
+            }
+        }
+
+        if (!isInInventory)
+        {
+            itemList.Add(item);
+        }
     }
 
     public int GetItemCount()
     {
         return itemList.Count;
+    }
+
+    public List<Item> GetItemList()
+    {
+        return itemList;
     }
 }
