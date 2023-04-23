@@ -7,7 +7,6 @@ public class Item
     // All possible Items
     public enum ItemType
     {
-        Cup,
         Water,
         Sugar,
         Coffee,

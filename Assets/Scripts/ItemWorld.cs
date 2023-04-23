@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ItemWorld : MonoBehaviour
 {
-
-    public Transform pfItemWorld;
+    
     public static ItemWorld SpawnItemWorld(Vector3 position, Item item)
     {
         //Debug.Log(position);
