@@ -14,7 +14,7 @@ public class OrderDelivery : MonoBehaviour
         List<Item> cupIngredients = cupInventory.GetItemList();
 
         
-        if (MatchIngrediets(cupIngredients, requiredOrder.CurrentOrder))
+        if (MatchIngredients(cupIngredients, requiredOrder.CurrentOrder))
         {
             Debug.Log("Match!!!!!!");
         }
@@ -24,7 +24,7 @@ public class OrderDelivery : MonoBehaviour
         }
     }
 
-    private bool MatchIngrediets(List<Item> cupContents, List<Item> requiredContents)
+    private bool MatchIngredients(List<Item> cupContents, List<Item> requiredContents)
     {
         bool isEqual = true;
         var counter = 0;
