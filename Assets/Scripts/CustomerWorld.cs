@@ -10,6 +10,7 @@ public class CustomerWorld : MonoBehaviour
     private void Awake()
     {
         CustomerCoffeeOrder = new ActiveOrder();
+        OrderDelivery.SetOrder(CustomerCoffeeOrder);
         Debug.Log(CustomerCoffeeOrder.CoffeeName);
         Debug.Log(CustomerCoffeeOrder.CurrentOrder);
     }
