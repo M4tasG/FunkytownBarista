@@ -21,6 +21,8 @@ public class CupController : MonoBehaviour
             inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
             Debug.Log(inventory.GetItemCount());
+            Debug.Log(inventory.GetItemList()[0].itemType);
+            Debug.Log(inventory.GetItemList()[0].amount);
         }
     }
     
