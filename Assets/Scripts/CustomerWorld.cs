@@ -11,6 +11,7 @@ public class CustomerWorld : MonoBehaviour
     {
         CustomerCoffeeOrder = new ActiveOrder();
         OrderDelivery.SetOrder(CustomerCoffeeOrder);
+        OrderDelivery.SetActiveCustomer(gameObject);
         Debug.Log(CustomerCoffeeOrder.CoffeeName);
         Debug.Log(CustomerCoffeeOrder.CurrentOrder);
     }

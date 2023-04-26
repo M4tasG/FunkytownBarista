@@ -7,6 +7,7 @@ using UnityEngine;
 public class OrderDelivery : MonoBehaviour
 {
     public static ActiveOrder requiredOrder;
+    public static GameObject ActiveCustomer;
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collider " + col + " entered the delivery area");
@@ -17,10 +18,14 @@ public class OrderDelivery : MonoBehaviour
         if (MatchIngredients(cupIngredients, requiredOrder.CurrentOrder))
         {
             Debug.Log("Match!!!!!!");
+            // Implement coin addition
+            ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
         }
         else
         {
             Debug.Log("Does not match...");
+            // Possibly implement citations and coin subtraction
+            ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
         }
     }
 
@@ -42,5 +47,10 @@ public class OrderDelivery : MonoBehaviour
     public static void SetOrder(ActiveOrder order)
     {
         requiredOrder = order;
+    }
+
+    public static void SetActiveCustomer(GameObject obj)
+    {
+        ActiveCustomer = obj;
     }
 }
