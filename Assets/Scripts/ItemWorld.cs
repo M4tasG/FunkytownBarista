@@ -10,11 +10,8 @@ public class ItemWorld : MonoBehaviour
     {
         //Debug.Log(position);
         //Debug.Log(item);
-        Debug.Log(ItemAssets.Instance);
-        Debug.Log(ItemAssets.Instance.pfItemWorld);
         Transform transform = Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
-
-        Debug.Log(transform);
+        
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
         itemWorld.SetItem(item);
 
