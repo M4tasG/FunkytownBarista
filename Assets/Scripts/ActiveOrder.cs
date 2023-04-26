@@ -8,7 +8,7 @@ public class ActiveOrder
 {
     public Order.CoffeeName CoffeeName;
 
-    public List<Item.ItemType> CurrentOrder;
+    public List<Item> CurrentOrder;
 
     public ActiveOrder()
     {

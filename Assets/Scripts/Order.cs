@@ -10,13 +10,44 @@ public class Order
         White,
     }
 
-    public static Dictionary<CoffeeName, List<Item.ItemType>> possibleOrders;
+    public static Dictionary<CoffeeName, List<Item>> possibleOrders;
     
     
     static Order()
     {
-        possibleOrders = new Dictionary<CoffeeName, List<Item.ItemType>>();
-        possibleOrders.Add(CoffeeName.Black, new List<Item.ItemType>(){Item.ItemType.Water, Item.ItemType.Coffee});
-        possibleOrders.Add(CoffeeName.White, new List<Item.ItemType>(){Item.ItemType.Water, Item.ItemType.Coffee, Item.ItemType.Milk});
+        possibleOrders = new Dictionary<CoffeeName, List<Item>>();
+        possibleOrders.Add(CoffeeName.Black, new List<Item>()
+        {
+            new Item()
+            {
+                itemType = Item.ItemType.Coffee,
+                amount = 1
+            },
+            new Item()
+            {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            }
+        }
+        );
+        possibleOrders.Add(CoffeeName.White, new List<Item>()
+            {
+                new Item()
+                {
+                    itemType = Item.ItemType.Coffee,
+                    amount = 1
+                },
+                new Item()
+                {
+                    itemType = Item.ItemType.Water,
+                    amount = 1
+                },
+                new Item()
+                {
+                    itemType = Item.ItemType.Milk,
+                    amount = 1
+                }
+            }
+        );
     }
 }
