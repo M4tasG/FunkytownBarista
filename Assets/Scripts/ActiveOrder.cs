@@ -6,14 +6,14 @@ using Random = UnityEngine.Random;
 
 public class ActiveOrder
 {
-    public Order.CoffeeName coffeeName;
+    public Order.CoffeeName CoffeeName;
 
-    public List<Item.ItemType> currentOrder;
+    public List<Item.ItemType> CurrentOrder;
 
     public ActiveOrder()
     {
         var orderNumber = Random.Range(0, Order.possibleOrders.Count);
-        coffeeName = (Order.CoffeeName)orderNumber;
-        currentOrder = Order.possibleOrders[coffeeName];
+        CoffeeName = (Order.CoffeeName)orderNumber;
+        CurrentOrder = Order.possibleOrders[CoffeeName];
     }
 }
