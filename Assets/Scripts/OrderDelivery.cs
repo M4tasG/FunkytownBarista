@@ -9,6 +9,7 @@ public class OrderDelivery : MonoBehaviour
     public static ActiveOrder requiredOrder;
     public static GameObject ActiveCustomer;
     public static GameObject CustomerSpawnerObject;
+    public static GameObject CoinObject;
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collider " + col + " entered the delivery area");
@@ -20,6 +21,7 @@ public class OrderDelivery : MonoBehaviour
         {
             Debug.Log("Match!!!!!!");
             // Implement coin addition
+            CoinObject.GetComponent<CoinController>().AddCoins(5);
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
             col.GetComponent<CupController>().DestroySelf();
             //.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
@@ -71,5 +73,10 @@ public class OrderDelivery : MonoBehaviour
     public static void SetCustomerSpawnerObject(GameObject obj)
     {
         CustomerSpawnerObject = obj;
+    }
+
+    public static void SetCoinObject(GameObject obj)
+    {
+        CoinObject = obj;
     }
 }
