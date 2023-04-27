@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774c1aaab8d52714880ffc632ed02dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfCoffeCup: {fileID: 4060528228394399862, guid: 9a396133a8ade9c4f92d8a344da15ada, type: 3}
+  pfCoffeeCup: {fileID: 4060528228394399862, guid: 9a396133a8ade9c4f92d8a344da15ada, type: 3}
 --- !u!212 &1828400749
 SpriteRenderer:
   m_ObjectHideFlags: 0
