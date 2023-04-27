@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
 {
+    // CustomerSpawner holds logic for spawning Customers (CustomerWorld)
+    
     public Transform pfCustomer;
 
+    // On Awake this script specifies to OrderDelivery this CustomerSpawner
+    // That allows the OrderDelivery area to continue spawning customers after using the SpawnCustomer
+    // from this script
+    // Invoke delays the Customer spawn by 5 seconds
     private void Awake()
     {
         OrderDelivery.SetCustomerSpawnerObject(gameObject);
         Invoke("SpawnCustomer", 5);
     }
     
+    // Spawns a new Customer at specified position using the Customer prefab
     public void SpawnCustomer()
     {
         Debug.Log("Spawning customer");

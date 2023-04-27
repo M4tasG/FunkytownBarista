@@ -6,10 +6,15 @@ using UnityEngine;
 
 public class OrderDelivery : MonoBehaviour
 {
+    // OrderDelivery logic
+    
     public static ActiveOrder requiredOrder;
     public static GameObject ActiveCustomer;
     public static GameObject CustomerSpawnerObject;
     public static GameObject CoinObject;
+    
+    // When a Collider2D enters the OrderDelivery, it checks if the Collider matches the required order
+    // TODO: Add a check to make sure the collider that entered is instance of Cup
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collider " + col + " entered the delivery area");
@@ -38,6 +43,7 @@ public class OrderDelivery : MonoBehaviour
         }
     }
 
+    // A function to check if the Cups contents match the required recipe
     private bool MatchIngredients(List<Item> cupContents, List<Item> requiredContents)
     {
         bool isEqual = true;
@@ -60,6 +66,8 @@ public class OrderDelivery : MonoBehaviour
 
         return isEqual;
     }
+    
+    // Functions to assign values to the variables at the top of the script
     public static void SetOrder(ActiveOrder order)
     {
         requiredOrder = order;

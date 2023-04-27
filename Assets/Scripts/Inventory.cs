@@ -18,6 +18,9 @@ public class Inventory
         //Debug.Log(itemList.Count);
     }
 
+    // Function to AddItem into the inventory
+    // Foreach used to find if the item already exists in the Inventory instance and then only adds the amount of it
+    // instead of adding a whole new item
     public void AddItem(Item item)
     {
         bool isInInventory = false;
@@ -36,11 +39,13 @@ public class Inventory
         }
     }
 
+    // Function to get the amount of unique items in Inventory
     public int GetItemCount()
     {
         return itemList.Count;
     }
 
+    // Function to fetch the ItemList in the Inventory instance
     public List<Item> GetItemList()
     {
         return itemList;

@@ -6,8 +6,12 @@ using UnityEngine.UIElements;
 
 public class CupSpawner : MonoBehaviour
 {
+    // CupSpawner holds logic for spawning Cups (CupController)
     public Transform pfCoffeeCup;
 
+    // This function gets called when you click on the object in game
+    // It calculates the spawn position for the cup (right below the spawner)
+    // and instantiates a new Cup instance using the prefab
     private void OnMouseDown()
     {
         Debug.Log("Spawning cup");

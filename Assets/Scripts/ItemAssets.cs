@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ItemAssets : MonoBehaviour
 {
-    
+    // No clue lol I was following a tutorial for this so idk what do
     public static ItemAssets Instance { get; private set; }
 
+    // Sets the ItemAssets instance to this
     private void Awake()
     {
-        Debug.Log("Awaking ItemAssets");
-        Debug.Log(this);
         Instance = this;
-        Debug.Log(Instance);
     }
 
     public Transform pfItemWorld;

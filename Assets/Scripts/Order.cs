@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Order
 {
+    // Order class
+    // Holds all possible recipes and Coffee names
     public enum CoffeeName 
     {
         Black,

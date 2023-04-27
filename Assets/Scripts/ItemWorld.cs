@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class ItemWorld : MonoBehaviour
 {
-    
+    // ItemWorld holds logic for constructing an Item to spawn and spawning it
+    // as well as assigning the relevant assets to the item
     public static ItemWorld SpawnItemWorld(Vector3 position, Item item)
     {
-        //Debug.Log(position);
-        //Debug.Log(item);
         Transform transform = Instantiate(ItemAssets.Instance.pfItemWorld, position, Quaternion.identity);
         
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
@@ -27,6 +26,7 @@ public class ItemWorld : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // Set what kind of Item this is
     public void SetItem(Item item)
     {
         this.item = item;
@@ -35,11 +35,13 @@ public class ItemWorld : MonoBehaviour
         // spriteRenderer.sprite = item.GetSprite()
     }
 
+    // Fetch the Item instance
     public Item GetItem()
     {
         return item;
     }
 
+    // Destroy this Item instance
     public void DestroySelf()
     {
         Destroy(gameObject);

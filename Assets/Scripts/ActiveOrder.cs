@@ -6,10 +6,11 @@ using Random = UnityEngine.Random;
 
 public class ActiveOrder
 {
+    // ActiveOrder class creates an instace of Order and assigns a random recipe
     public Order.CoffeeName CoffeeName;
-
     public List<Item> CurrentOrder;
 
+    // This constructor is responsible for assigning a random recipe to ActiveOrder
     public ActiveOrder()
     {
         var orderNumber = Random.Range(0, Order.possibleOrders.Count);
