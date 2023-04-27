@@ -20,12 +20,14 @@ public class OrderDelivery : MonoBehaviour
             Debug.Log("Match!!!!!!");
             // Implement coin addition
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
+            col.GetComponent<CupController>().DestroySelf();
         }
         else
         {
             Debug.Log("Does not match...");
             // Possibly implement citations and coin subtraction
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
+            col.GetComponent<CupController>().DestroySelf();
         }
     }
 
@@ -33,13 +35,20 @@ public class OrderDelivery : MonoBehaviour
     {
         bool isEqual = true;
         var counter = 0;
-        foreach (var item in cupContents)
+        if (cupContents.Count != requiredContents.Count)
         {
-            if (item.itemType != requiredContents[counter].itemType || item.amount != requiredContents[counter].amount)
+            isEqual = false;
+        }
+        else
+        {
+            foreach (var item in cupContents)
             {
-                isEqual = false;
-            }
-            counter = counter + 1;
+                if (item.itemType != requiredContents[counter].itemType || item.amount != requiredContents[counter].amount)
+                {
+                    isEqual = false;
+                }
+                counter = counter + 1;
+            }   
         }
 
         return isEqual;
