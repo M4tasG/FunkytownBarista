@@ -22,7 +22,8 @@ public class OrderDelivery : MonoBehaviour
             // Implement coin addition
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
             col.GetComponent<CupController>().DestroySelf();
-            CustomerSpawnerObject.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
+            //.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
+            CustomerSpawnerObject.GetComponent<CustomerSpawner>().Invoke("SpawnCustomer", 3);
         }
         else
         {
@@ -30,7 +31,8 @@ public class OrderDelivery : MonoBehaviour
             // Possibly implement citations and coin subtraction
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
             col.GetComponent<CupController>().DestroySelf();
-            CustomerSpawnerObject.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
+            //CustomerSpawnerObject.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
+            CustomerSpawnerObject.GetComponent<CustomerSpawner>().Invoke("SpawnCustomer", 3);
         }
     }
 

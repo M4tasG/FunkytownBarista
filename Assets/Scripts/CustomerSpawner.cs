@@ -10,17 +10,13 @@ public class CustomerSpawner : MonoBehaviour
     private void Awake()
     {
         OrderDelivery.SetCustomerSpawnerObject(gameObject);
+        Invoke("SpawnCustomer", 5);
     }
-
-    private void OnMouseDown()
-    {
-        SpawnCustomer(gameObject.transform.position);
-    }
-
-    public void SpawnCustomer(Vector3 spawnPosition)
+    
+    public void SpawnCustomer()
     {
         Debug.Log("Spawning customer");
-        spawnPosition.y = spawnPosition.y - 2;
+        Vector3 spawnPosition = new Vector3(-9.5f, -3.5f);
         Transform transform = Instantiate(pfCustomer, spawnPosition, Quaternion.identity);
     }
 }
