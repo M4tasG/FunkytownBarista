@@ -28,5 +28,10 @@ public class CupController : MonoBehaviour
     {
         return inventory;
     }
-    
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
 }
