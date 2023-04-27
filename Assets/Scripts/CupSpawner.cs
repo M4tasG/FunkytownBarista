@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class CupSpawner : MonoBehaviour
 {
-    public Transform pfCoffeCup;
+    public Transform pfCoffeeCup;
 
     private void OnMouseDown()
     {
@@ -14,6 +14,6 @@ public class CupSpawner : MonoBehaviour
         Vector3 currentPosition = gameObject.transform.position;
         Vector3 spawnPosition = new Vector3(currentPosition.x, currentPosition.y - 1);
         
-        Transform transform = Instantiate(pfCoffeCup, spawnPosition, Quaternion.identity);
+        Transform transform = Instantiate(pfCoffeeCup, spawnPosition, Quaternion.identity);
     }
 }
