@@ -24,6 +24,7 @@ public class ItemWorld : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log(spriteRenderer.size);
     }
 
     // Set what kind of Item this is
