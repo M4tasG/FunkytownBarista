@@ -22,11 +22,13 @@ public class CoinController : MonoBehaviour
     public void AddCoins(int amount)
     {
         Coins = Coins + amount;
+        UI_CoinCounter.changeCoinCount(Coins);
     }
 
     // A Function to Subtract coins from the current value
     public void SubtractCoins(int amount)
     {
         Coins = Coins - amount;
+        UI_CoinCounter.changeCoinCount(Coins);
     }
 }
