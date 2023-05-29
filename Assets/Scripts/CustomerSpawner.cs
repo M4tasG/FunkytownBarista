@@ -25,5 +25,6 @@ public class CustomerSpawner : MonoBehaviour
         Debug.Log("Spawning customer");
         Vector3 spawnPosition = new Vector3(gameObject.transform.position.x + 2, gameObject.transform.position.y + 2);
         Transform transform = Instantiate(pfCustomer, spawnPosition, Quaternion.identity);
+        
     }
 }

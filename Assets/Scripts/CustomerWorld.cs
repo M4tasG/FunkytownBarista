@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CustomerWorld : MonoBehaviour
 {
     // CustomerWorld controls Customer logic
     private ActiveOrder CustomerCoffeeOrder;
+    public GameObject dialoguePanel;
+    public TMP_Text dialogueText;
 
     // When a new Customer Awakes:
     // They get set a new order
@@ -18,8 +21,13 @@ public class CustomerWorld : MonoBehaviour
         OrderDelivery.SetActiveCustomer(gameObject);
         
         // Replace these with UI elements later (Dialogue box)
-        Debug.Log(CustomerCoffeeOrder.CoffeeName);
-        Debug.Log(CustomerCoffeeOrder.CurrentOrder);
+        //Debug.Log(CustomerCoffeeOrder.CoffeeName);
+        //Debug.Log(CustomerCoffeeOrder.CurrentOrder);
+        dialoguePanel = DialoguePanel.fetchDialoguePanel();
+        dialogueText = DialogueTextBox.fetchDialogueTextBox();
+        
+        dialoguePanel.SetActive(true);
+        dialogueText.text = "I want a " + CustomerCoffeeOrder.DialogueName;
     }
 
     // Function to destroy the object (after order submission)

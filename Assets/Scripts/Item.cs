@@ -8,8 +8,9 @@ public class Item
     public enum ItemType
     {
         Water,
-        Sugar,
+        Chocolate,
         Coffee,
+        Tea,
         Milk,
     }
     
