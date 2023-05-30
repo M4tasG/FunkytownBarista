@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CustomerSpawner : MonoBehaviour
 {
     // CustomerSpawner holds logic for spawning Customers (CustomerWorld)
+
+    public Sprite[] spriteArray;
     
     public Transform pfCustomer;
 
@@ -25,6 +28,5 @@ public class CustomerSpawner : MonoBehaviour
         Debug.Log("Spawning customer");
         Vector3 spawnPosition = new Vector3(-20.1949f, 1.819514f, -2);
         Transform transform = Instantiate(pfCustomer, spawnPosition, Quaternion.identity);
-        
     }
 }

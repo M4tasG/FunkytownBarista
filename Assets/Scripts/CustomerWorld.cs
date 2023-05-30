@@ -11,6 +11,8 @@ public class CustomerWorld : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
 
+    private SpriteRenderer spriteRenderer;
+    
     // When a new Customer Awakes:
     // They get set a new order
     // OrderDelivery receives information about their order
@@ -19,6 +21,9 @@ public class CustomerWorld : MonoBehaviour
         CustomerCoffeeOrder = new ActiveOrder();
         OrderDelivery.SetOrder(CustomerCoffeeOrder);
         OrderDelivery.SetActiveCustomer(gameObject);
+
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        SetSprite();
         
         // Replace these with UI elements later (Dialogue box)
         //Debug.Log(CustomerCoffeeOrder.CoffeeName);
@@ -30,6 +35,11 @@ public class CustomerWorld : MonoBehaviour
         dialogueText.text = "I want a " + CustomerCoffeeOrder.DialogueName;
     }
 
+    public void SetSprite()
+    {
+        spriteRenderer.sprite = CusAssets.Instance.GetSprite();
+    }
+    
     // Function to destroy the object (after order submission)
     public void DestroySelf()
     {
