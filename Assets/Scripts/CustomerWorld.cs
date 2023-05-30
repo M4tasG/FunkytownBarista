@@ -43,6 +43,7 @@ public class CustomerWorld : MonoBehaviour
     // Function to destroy the object (after order submission)
     public void DestroySelf()
     {
+        dialoguePanel.SetActive(false);
         Destroy(gameObject);
     }
     public ActiveOrder GetCustomerOrder()
