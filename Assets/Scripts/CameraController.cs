@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
     public void moveCameraLeft()
     {
         sceneCamera.transform.position =
-            new Vector3(sceneCamera.transform.position.x - 10, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
+            new Vector3(sceneCamera.transform.position.x - 17.8f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
         if (currentCameraState == possibleCameraStates.Middle)
         {
             currentCameraState = possibleCameraStates.Left;
@@ -63,7 +63,7 @@ public class CameraController : MonoBehaviour
     public void moveCameraRight()
     {
         sceneCamera.transform.position =
-            new Vector3(sceneCamera.transform.position.x + 10, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
+            new Vector3(sceneCamera.transform.position.x + 17.8f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
         if (currentCameraState == possibleCameraStates.Middle)
         {
             currentCameraState = possibleCameraStates.Right;

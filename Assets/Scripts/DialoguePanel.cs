@@ -9,12 +9,17 @@ public class DialoguePanel : MonoBehaviour
 
     private void Awake()
     {
+        Invoke("SetGameObject", 0.1f);
+    }
+
+    private void SetGameObject()
+    {
         Debug.Log("Awaking DialoguePanel");
         dialoguePanelObject = gameObject;
         gameObject.SetActive(false);
         Debug.Log(dialoguePanelObject);
     }
-
+    
     public static GameObject fetchDialoguePanel()
     {
         Debug.Log(dialoguePanelObject);
