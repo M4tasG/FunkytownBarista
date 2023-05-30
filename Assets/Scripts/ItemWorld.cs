@@ -33,7 +33,7 @@ public class ItemWorld : MonoBehaviour
         this.item = item;
         // Not implemented yet
         // https://www.youtube.com/watch?v=2WnAOV7nHW0
-        // spriteRenderer.sprite = item.GetSprite()
+        spriteRenderer.sprite = item.GetSprite();
     }
 
     // Fetch the Item instance

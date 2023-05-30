@@ -14,5 +14,10 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Transform pfItemWorld;
-    
+
+    public Sprite waterSprite;
+    public Sprite chocolateSprite;
+    public Sprite coffeeSprite;
+    public Sprite teaSprite;
+    public Sprite milkSprite;
 }
