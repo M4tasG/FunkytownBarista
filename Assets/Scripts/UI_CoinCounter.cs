@@ -15,7 +15,7 @@ public class UI_CoinCounter : MonoBehaviour
 
     public static void changeCoinCount(int amount)
     {
-        UICoinCounter.text = "Coins: " + amount;
+        UICoinCounter.text = amount.ToString();
     }
     
 }
