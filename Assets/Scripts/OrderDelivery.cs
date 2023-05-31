@@ -36,6 +36,7 @@ public class OrderDelivery : MonoBehaviour
         {
             Debug.Log("Does not match...");
             // Possibly implement citations and coin subtraction
+            CoinObject.GetComponent<CoinController>().SubtractCoins(3);
             ActiveCustomer.GetComponent<CustomerWorld>().DestroySelf();
             col.GetComponent<CupController>().DestroySelf();
             //CustomerSpawnerObject.GetComponent<CustomerSpawner>().SpawnCustomer(CustomerSpawnerObject.transform.position);
