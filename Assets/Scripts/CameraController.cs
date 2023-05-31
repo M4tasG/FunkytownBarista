@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
 
     public Button leftButton;
     public Button rightButton;
+
+    //public GameObject dialoguePanel;
     
     private possibleCameraStates currentCameraState;
     
@@ -25,6 +27,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         currentCameraState = possibleCameraStates.Left;
+        resolveButtonsForCameraState();
     }
 
     public void resolveButtonsForCameraState()
@@ -33,23 +36,26 @@ public class CameraController : MonoBehaviour
         {
             leftButton.gameObject.SetActive(false);
             rightButton.gameObject.SetActive(true);
+            //dialoguePanel.SetActive(true);
         }
         else if (currentCameraState == possibleCameraStates.Middle)
         {
             leftButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(true);
+            //dialoguePanel.SetActive(false);
         }
         else if (currentCameraState == possibleCameraStates.Right)
         {
             leftButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(false);
+            //dialoguePanel.SetActive(false);
         }
     }
     
     public void moveCameraLeft()
     {
         sceneCamera.transform.position =
-            new Vector3(sceneCamera.transform.position.x - 17.8f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
+            new Vector3(sceneCamera.transform.position.x - 17.78f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
         if (currentCameraState == possibleCameraStates.Middle)
         {
             currentCameraState = possibleCameraStates.Left;
@@ -63,7 +69,7 @@ public class CameraController : MonoBehaviour
     public void moveCameraRight()
     {
         sceneCamera.transform.position =
-            new Vector3(sceneCamera.transform.position.x + 17.8f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
+            new Vector3(sceneCamera.transform.position.x + 17.78f, sceneCamera.transform.position.y, sceneCamera.transform.position.z);
         if (currentCameraState == possibleCameraStates.Middle)
         {
             currentCameraState = possibleCameraStates.Right;
@@ -74,4 +80,5 @@ public class CameraController : MonoBehaviour
         }
         resolveButtonsForCameraState();
     }
+    
 }

@@ -33,6 +33,7 @@ public class CustomerWorld : MonoBehaviour
         
         dialoguePanel.SetActive(true);
         dialogueText.text = "I want a " + CustomerCoffeeOrder.DialogueName;
+        Invoke("DisableDialogue", 3);
     }
 
     public void SetSprite()
@@ -49,6 +50,11 @@ public class CustomerWorld : MonoBehaviour
     public ActiveOrder GetCustomerOrder()
     {
         return CustomerCoffeeOrder;
+    }
+
+    private void DisableDialogue()
+    {
+        dialoguePanel.SetActive(false);
     }
     
 }
