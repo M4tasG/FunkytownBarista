@@ -11,6 +11,7 @@ public class UI_CoinCounter : MonoBehaviour
     private void Awake()
     {
         UICoinCounter = gameObject.GetComponent<TextMeshProUGUI>();
+        changeCoinCount(CoinController.Instance.Coins);
     }
 
     public static void changeCoinCount(int amount)
