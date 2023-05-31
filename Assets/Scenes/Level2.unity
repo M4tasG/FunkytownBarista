@@ -1409,7 +1409,7 @@ MonoBehaviour:
   gameWonText: {fileID: 0}
   gameLostText: {fileID: 0}
   CoinsRequired: 0
-  levelTimer: 3
+  levelTimer: 120
 --- !u!4 &488381589
 Transform:
   m_ObjectHideFlags: 0

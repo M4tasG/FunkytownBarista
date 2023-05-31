@@ -2127,7 +2127,7 @@ MonoBehaviour:
   gameWonText: {fileID: 337535366}
   gameLostText: {fileID: 1967993166}
   CoinsRequired: 100
-  levelTimer: 3
+  levelTimer: 180
 --- !u!4 &488381589
 Transform:
   m_ObjectHideFlags: 0
