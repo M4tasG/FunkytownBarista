@@ -1405,7 +1405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f73aedeeecd3d14c9d749ca13ca2be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTimer: 120
+  gameOverScreen: {fileID: 0}
+  gameWonText: {fileID: 0}
+  gameLostText: {fileID: 0}
+  CoinsRequired: 0
+  levelTimer: 3
 --- !u!4 &488381589
 Transform:
   m_ObjectHideFlags: 0

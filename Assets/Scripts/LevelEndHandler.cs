@@ -8,6 +8,12 @@ using UnityEngine.SceneManagement;
 public class LevelEndHandler : MonoBehaviour
 {
 
+    public GameObject gameOverScreen;
+    public GameObject gameWonText;
+    public GameObject gameLostText;
+
+    public int CoinsRequired;
+    
     public float levelTimer;
     private void Awake()
     {
@@ -26,8 +32,22 @@ public class LevelEndHandler : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "Level3")
         {
-            SceneManager.LoadScene("Menu");
+            isGameWon(CoinController.Instance.Coins);
         }
     }
-    
+    public void isGameWon(int coinsGathered)
+    {
+        gameOverScreen.SetActive(false);
+        gameWonText.SetActive(false);
+        gameLostText.SetActive(false);
+        gameOverScreen.SetActive(true);
+        if (coinsGathered >= CoinsRequired)
+        {
+            gameWonText.SetActive(true);
+        }
+        else
+        {
+            gameLostText.SetActive(true);
+        }
+    }
 }
