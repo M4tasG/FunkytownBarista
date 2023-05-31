@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
-    private enum possibleCameraStates
+    public enum possibleCameraStates
     {
         Left,
         Middle,
@@ -19,33 +19,54 @@ public class CameraController : MonoBehaviour
     public Button leftButton;
     public Button rightButton;
 
+    private GameObject dialoguePanel;
+
+    private static bool isFirstDialogue = true;
+    
     //public GameObject dialoguePanel;
     
-    private possibleCameraStates currentCameraState;
+    public possibleCameraStates currentCameraState;
     
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Invoke("SetDialoguePanel", 0.02f);
         currentCameraState = possibleCameraStates.Left;
-        resolveButtonsForCameraState();
+        Invoke("resolveButtonsForCameraState", 0.3f);
     }
 
+    void SetDialoguePanel()
+    {
+        dialoguePanel = DialoguePanel.fetchDialoguePanel();
+    }
+    
     public void resolveButtonsForCameraState()
     {
         if (currentCameraState == possibleCameraStates.Left)
         {
+            if (isFirstDialogue)
+            {
+                //dialoguePanel.SetActive(true);
+                isFirstDialogue = false;
+            }
+            else
+            {
+                dialoguePanel.SetActive(true);
+            }
+            //dialoguePanel.SetActive(true);
             leftButton.gameObject.SetActive(false);
             rightButton.gameObject.SetActive(true);
             //dialoguePanel.SetActive(true);
         }
         else if (currentCameraState == possibleCameraStates.Middle)
         {
+            dialoguePanel.SetActive(false);
             leftButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(true);
             //dialoguePanel.SetActive(false);
         }
         else if (currentCameraState == possibleCameraStates.Right)
         {
+            dialoguePanel.SetActive(false);
             leftButton.gameObject.SetActive(true);
             rightButton.gameObject.SetActive(false);
             //dialoguePanel.SetActive(false);
@@ -79,6 +100,11 @@ public class CameraController : MonoBehaviour
             currentCameraState = possibleCameraStates.Middle;
         }
         resolveButtonsForCameraState();
+    }
+
+    public static void setFirstDialogue(bool val)
+    {
+        isFirstDialogue = val;
     }
     
 }

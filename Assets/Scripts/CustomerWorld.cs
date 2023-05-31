@@ -24,7 +24,7 @@ public class CustomerWorld : MonoBehaviour
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         SetSprite();
-        
+
         // Replace these with UI elements later (Dialogue box)
         //Debug.Log(CustomerCoffeeOrder.CoffeeName);
         //Debug.Log(CustomerCoffeeOrder.CurrentOrder);
@@ -33,7 +33,7 @@ public class CustomerWorld : MonoBehaviour
         
         dialoguePanel.SetActive(true);
         dialogueText.text = "I want a " + CustomerCoffeeOrder.DialogueName;
-        Invoke("DisableDialogue", 3);
+        //Invoke("DisableDialogue", 3);
     }
 
     public void SetSprite()
@@ -45,6 +45,7 @@ public class CustomerWorld : MonoBehaviour
     public void DestroySelf()
     {
         dialoguePanel.SetActive(false);
+        CameraController.setFirstDialogue(true);
         Destroy(gameObject);
     }
     public ActiveOrder GetCustomerOrder()
