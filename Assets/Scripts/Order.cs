@@ -28,12 +28,28 @@ public class Order
     }
 
     public static Dictionary<CoffeeName, List<Item>> possibleOrders;
-    
-    
+
+    public static Dictionary<CoffeeName, List<Item>> easyOrders;
+    public static Dictionary<CoffeeName, List<Item>> mediumOrders;
+    public static Dictionary<CoffeeName, List<Item>> hardOrders;
+
+    //public static List<Dictionary<CoffeeName, List<Item>>> allOrders;
+
+    public static Dictionary<DifficultyController.Difficulty, Dictionary<CoffeeName, List<Item>>> allOrders;
+
     static Order()
     {
         possibleOrders = new Dictionary<CoffeeName, List<Item>>();
-        possibleOrders.Add(CoffeeName.Black, new List<Item>() {
+        
+        easyOrders = new Dictionary<CoffeeName, List<Item>>();
+        mediumOrders = new Dictionary<CoffeeName, List<Item>>();
+        hardOrders = new Dictionary<CoffeeName, List<Item>>();
+
+        allOrders = new Dictionary<DifficultyController.Difficulty, Dictionary<CoffeeName, List<Item>>>();
+
+        // Easy Orders (Base recipe)
+        
+        easyOrders.Add(CoffeeName.Black, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -43,8 +59,51 @@ public class Order
                 amount = 1
             }
         });
+        
+        easyOrders.Add(CoffeeName.White, new List<Item>() {
+            new Item() {
+                itemType = Item.ItemType.Coffee,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Milk,
+                amount = 1
+            }
+        });
+        
+        easyOrders.Add(CoffeeName.Tea, new List<Item>() {
+            new Item() {
+                itemType = Item.ItemType.Tea,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            }
+        });
 
-        possibleOrders.Add(CoffeeName.BlackChocolate, new List<Item>() {
+        easyOrders.Add(CoffeeName.WhiteTea, new List<Item>() {
+            new Item() {
+                itemType = Item.ItemType.Tea,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Milk,
+                amount = 1
+            }
+        });
+        
+        // Medium Orders (Base Recipe + Deviation)
+
+        mediumOrders.Add(CoffeeName.BlackChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -59,23 +118,7 @@ public class Order
             }
         });
         
-
-        possibleOrders.Add(CoffeeName.White, new List<Item>() {
-            new Item() {
-                itemType = Item.ItemType.Coffee,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Water,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Milk,
-                amount = 1
-            }
-        });
-
-        possibleOrders.Add(CoffeeName.WhiteChocolate, new List<Item>() {
+        mediumOrders.Add(CoffeeName.WhiteChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -94,48 +137,7 @@ public class Order
             }
         });
         
-        possibleOrders.Add(CoffeeName.Tea, new List<Item>() {
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Water,
-                amount = 1
-            }
-        });
-
-        possibleOrders.Add(CoffeeName.ChocolateTea, new List<Item>() {
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Water,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Chocolate,
-                amount = 1
-            }
-        });
-
-        possibleOrders.Add(CoffeeName.WhiteTea, new List<Item>() {
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Water,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Milk,
-                amount = 1
-            }
-        });
-
-        possibleOrders.Add(CoffeeName.ChocolateWhiteTea, new List<Item>() {
+        mediumOrders.Add(CoffeeName.ChocolateWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
                 amount = 1
@@ -154,7 +156,24 @@ public class Order
             }
         });
         
-        possibleOrders.Add(CoffeeName.StrongBlack, new List<Item>() {
+        mediumOrders.Add(CoffeeName.ChocolateTea, new List<Item>() {
+            new Item() {
+                itemType = Item.ItemType.Tea,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Chocolate,
+                amount = 1
+            }
+        });
+        
+        // Hard Orders (Base Recipe + Deviation + Extra)
+        
+        hardOrders.Add(CoffeeName.StrongBlack, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -169,7 +188,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongBlackChocolate, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongBlackChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -188,7 +207,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongWhite, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongWhite, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -207,7 +226,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongWhiteChocolate, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongWhiteChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
                 amount = 1
@@ -230,7 +249,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongTea, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
                 amount = 1
@@ -245,7 +264,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongChocolateTea, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongChocolateTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
                 amount = 1
@@ -264,7 +283,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongWhiteTea, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
                 amount = 1
@@ -283,7 +302,7 @@ public class Order
             }
         });
 
-        possibleOrders.Add(CoffeeName.StrongChocolateWhiteTea, new List<Item>() {
+        hardOrders.Add(CoffeeName.StrongChocolateWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
                 amount = 1
@@ -305,6 +324,11 @@ public class Order
                 amount = 1
             }
         });
-
+        
+        // Create Order Dictionary sorted by Difficulty
+        
+        allOrders.Add(DifficultyController.Difficulty.Easy, easyOrders);
+        allOrders.Add(DifficultyController.Difficulty.Medium, mediumOrders);
+        allOrders.Add(DifficultyController.Difficulty.Hard, hardOrders);
     }
 }

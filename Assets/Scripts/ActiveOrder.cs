@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -22,9 +23,12 @@ public class ActiveOrder
     public ActiveOrder()
     {
         difficulty = DifficultyController.fetchDifficulty();
-        var orderNumber = Random.Range(0, Order.possibleOrders.Count);
-        CoffeeName = (Order.CoffeeName)orderNumber;
-        CurrentOrder = Order.possibleOrders[CoffeeName];
+        Debug.Log(difficulty);
+        var orderDict = Order.allOrders[difficulty];
+        var orderNumber = Random.Range(0,orderDict.Count);
+        KeyValuePair<Order.CoffeeName, List<Item>> orderPair = orderDict.ElementAt(orderNumber);
+        CoffeeName = orderPair.Key;
+        CurrentOrder = orderDict[CoffeeName];
         SetDrinkNames();
         DialogueName = dialogueNames[CoffeeName];
     }
