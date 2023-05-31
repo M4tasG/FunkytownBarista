@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelEndHandler : MonoBehaviour
 {
+
+    public float levelTimer;
     private void Awake()
     {
-        Invoke("SwitchLevel", 10);
+        Invoke("SwitchLevel", levelTimer);
     }
 
     void SwitchLevel()
