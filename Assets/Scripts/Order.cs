@@ -47,8 +47,7 @@ public class Order
 
         allOrders = new Dictionary<DifficultyController.Difficulty, Dictionary<CoffeeName, List<Item>>>();
 
-        // Easy Orders (Base recipe)
-        
+        // Easy Orders
         easyOrders.Add(CoffeeName.Black, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
@@ -59,7 +58,7 @@ public class Order
                 amount = 1
             }
         });
-        
+
         easyOrders.Add(CoffeeName.White, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
@@ -74,7 +73,7 @@ public class Order
                 amount = 1
             }
         });
-        
+
         easyOrders.Add(CoffeeName.Tea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
@@ -100,9 +99,8 @@ public class Order
                 amount = 1
             }
         });
-        
-        // Medium Orders (Base Recipe + Deviation)
 
+        // Medium Orders
         mediumOrders.Add(CoffeeName.BlackChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
@@ -117,7 +115,7 @@ public class Order
                 amount = 1
             }
         });
-        
+
         mediumOrders.Add(CoffeeName.WhiteChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
@@ -136,7 +134,22 @@ public class Order
                 amount = 1
             }
         });
-        
+
+        mediumOrders.Add(CoffeeName.ChocolateTea, new List<Item>() {
+            new Item() {
+                itemType = Item.ItemType.Tea,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Water,
+                amount = 1
+            },
+            new Item() {
+                itemType = Item.ItemType.Chocolate,
+                amount = 1
+            }
+        });
+
         mediumOrders.Add(CoffeeName.ChocolateWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
@@ -155,32 +168,12 @@ public class Order
                 amount = 1
             }
         });
-        
-        mediumOrders.Add(CoffeeName.ChocolateTea, new List<Item>() {
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Water,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Chocolate,
-                amount = 1
-            }
-        });
-        
-        // Hard Orders (Base Recipe + Deviation + Extra)
-        
+
+        // Hard Orders
         hardOrders.Add(CoffeeName.StrongBlack, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Coffee,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -191,11 +184,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongBlackChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Coffee,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -210,11 +199,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongWhite, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Coffee,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -229,11 +214,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongWhiteChocolate, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Coffee,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Coffee,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -252,11 +233,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -267,11 +244,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongChocolateTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -286,11 +259,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -305,11 +274,7 @@ public class Order
         hardOrders.Add(CoffeeName.StrongChocolateWhiteTea, new List<Item>() {
             new Item() {
                 itemType = Item.ItemType.Tea,
-                amount = 1
-            },
-            new Item() {
-                itemType = Item.ItemType.Tea,
-                amount = 1
+                amount = 2
             },
             new Item() {
                 itemType = Item.ItemType.Water,
@@ -324,6 +289,7 @@ public class Order
                 amount = 1
             }
         });
+
         
         // Create Order Dictionary sorted by Difficulty
         

@@ -21,6 +21,10 @@ public class OrderDelivery : MonoBehaviour
         Inventory cupInventory = col.GetComponent<CupController>().GetInventory();
         List<Item> cupIngredients = cupInventory.GetItemList();
 
+        foreach (var item in cupIngredients)
+        {
+            Debug.Log(item.itemType);
+        }
         
         if (MatchIngredients(cupIngredients, requiredOrder.CurrentOrder))
         {
