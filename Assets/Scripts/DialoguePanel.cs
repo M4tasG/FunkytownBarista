@@ -9,7 +9,7 @@ public class DialoguePanel : MonoBehaviour
 
     private void Awake()
     {
-        Invoke("SetGameObject", 0.1f);
+        Invoke("SetGameObject", 0.01f);
     }
 
     private void SetGameObject()
