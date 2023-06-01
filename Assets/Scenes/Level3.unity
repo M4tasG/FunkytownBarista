@@ -1841,6 +1841,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 299691041}
   gameWonText: {fileID: 337535366}
   gameLostText: {fileID: 1967993166}
+  levelEndScreen: {fileID: 0}
+  levelEndText: {fileID: 0}
   CoinsRequired: 100
   levelTimer: 180
 --- !u!4 &488381589
@@ -1958,6 +1960,7 @@ MonoBehaviour:
   sceneCamera: {fileID: 519420031}
   leftButton: {fileID: 209947047}
   rightButton: {fileID: 332091433}
+  currentCameraState: 0
 --- !u!1 &533953902
 GameObject:
   m_ObjectHideFlags: 0
